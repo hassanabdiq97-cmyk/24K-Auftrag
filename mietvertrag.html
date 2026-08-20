@@ -185,6 +185,15 @@ label.fs.has .fsdel{display:block}
  textarea.t{line-height:1.25}
  .genbtn{display:none !important}
 }
+
+/* ---------- Grosse Foto-Blätter ---------- */
+.fgridbig{display:grid;grid-template-columns:repeat(2,1fr);gap:3mm;padding:3mm}
+.fgridbig label.fs{aspect-ratio:4/3}
+.fgridbig label.fs .fslab{font-size:8pt}
+@media print{.fgridbig{gap:2.6mm;padding:2.6mm}}
+@media screen and (max-width:900px){
+ body:not(.a4) .fgridbig{grid-template-columns:1fr;gap:10px;padding:8px}
+}
 </style>
 </head>
 <body>
@@ -192,7 +201,7 @@ label.fs.has .fsdel{display:block}
   <button onclick="window.print()">🖨️ Drucken / Als PDF speichern</button>
   <button onclick="clearAll()">Alles leeren</button>
   <button id="viewBtn" onclick="toggleView()">📄 A4-Ansicht</button>
-  <span class="verbadge" style="background:#2e7d32;color:#fff;border-radius:5px;padding:6px 10px;font-weight:bold;font-size:13px">V15</span>
+  <span class="verbadge" style="background:#2e7d32;color:#fff;border-radius:5px;padding:6px 10px;font-weight:bold;font-size:13px">V16</span>
   <a class="navbtn" href="index.html">🏠 Start</a>
   <a class="navbtn" href="quittung.html">🧾 Quittung</a>
   <a class="navbtn" href="auftrag.html">🔧 Auftrag</a>
@@ -347,13 +356,21 @@ label.fs.has .fsdel{display:block}
 <!-- ================= FOTODOKUMENTATION ================= -->
 <div class="sheet">
   <div class="hd2">
-    <div><h2>FOTODOKUMENTATION&nbsp;–&nbsp;ÜBERNAHME</h2><div class="sub2">Zustand bei Fahrzeugübergabe – rundum fotografieren (Slots antippen)<br>Autovermietung 24 Kanagalingam · Kirchstrasse 88 · 2540 Grenchen</div></div>
-    <div class="sec" style="margin:0 3mm 0 auto;display:flex">
-      <div class="c" style="flex:0 0 32mm"><span class="lb">Vertrags-Nr.</span><input class="t vnr-mirror"></div>
-      <div class="c" style="flex:0 0 34mm"><span class="lb">Datum / Zeit</span><input class="t"></div></div>
+    <div><h2>FOTODOKUMENTATION – ÜBERNAHME&nbsp;(1/2)</h2><div class="sub2">Zustand bei Fahrzeugübergabe – rundum fotografieren (Slots antippen)<br>Autovermietung 24 Kanagalingam · Kirchstrasse 88 · 2540 Grenchen</div></div>
+    <div class="sec" style="margin:0 3mm 0 auto;display:flex"><div class="c" style="flex:0 0 40mm"><span class="lb">Vertrags-Nr.</span><input class="t vnr-mirror"></div><div class="c" style="flex:0 0 34mm"><span class="lb">Datum / Zeit</span><input class="t"></div></div>
   </div>
-  <div class="sec"><div class="bar">FOTOS AUSSEN &amp; INNEN &ndash; ÜBERNAHME <span class="r">vorne · Fahrerseite · hinten · Beifahrerseite · Dashboard · Innenraum · Kofferraum</span></div>
-    <div class="fgrid"><label class="fs" data-p="vorne"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="fahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Fahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="hinten"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Hinten / Rückseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="beifahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Beifahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="dash"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Dashboard (km / Tank)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="innenv"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="innenh"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum hinten</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="koffer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Kofferraum innen</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="detail1"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 1 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="detail2"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 2 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label></div>
+  <div class="sec"><div class="bar">FOTOS AUSSEN – ÜBERNAHME <span class="r">gross und deutlich fotografieren – Schäden nah aufnehmen</span></div>
+    <div class="fgridbig"><label class="fs" data-p="vorne"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="fahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Fahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="hinten"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Hinten / Rückseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="beifahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Beifahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="dash"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Dashboard (km / Tank)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="innenv"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label></div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="hd2">
+    <div><h2>FOTODOKUMENTATION – ÜBERNAHME&nbsp;(2/2)</h2><div class="sub2">Innenraum & Details – Zustand bei Übergabe<br>Autovermietung 24 Kanagalingam · Kirchstrasse 88 · 2540 Grenchen</div></div>
+    <div class="sec" style="margin:0 3mm 0 auto;display:flex"><div class="c" style="flex:0 0 40mm"><span class="lb">Vertrags-Nr.</span><input class="t vnr-mirror"></div></div>
+  </div>
+  <div class="sec"><div class="bar">FOTOS INNEN & DETAILS – ÜBERNAHME <span class="r">bei Vorschäden zusätzlich Detailfotos machen</span></div>
+    <div class="fgridbig"><label class="fs" data-p="innenh"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum hinten</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="koffer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Kofferraum innen</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="detail1"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 1 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="detail2"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 2 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label></div>
   </div>
   <div class="note">Die Fotos dokumentieren den Zustand bei der Übernahme und sind Bestandteil des Mietvertrags. Beim Drucken / PDF-Speichern werden sie mitgedruckt.</div>
   <div class="sec sig"><div class="row">
@@ -362,17 +379,23 @@ label.fs.has .fsdel{display:block}
     <div class="c"><span class="lb">Unterschrift Vermieterin / Visum</span><div class="sigpad" data-s="mvf_ueb_firma"><canvas></canvas><button type="button" class="sigclear">✕</button><span class="sighint">✍️ Hier unterschreiben (Finger / Stift)</span></div></div></div></div>
 </div>
 
-
-<!-- ================= FOTODOKUMENTATION RÜCKGABE ================= -->
 <div class="sheet">
   <div class="hd2">
-    <div><h2>FOTODOKUMENTATION&nbsp;&ndash;&nbsp;RÜCKGABE</h2><div class="sub2">Zustand bei Fahrzeugrückgabe – rundum fotografieren (Slots antippen)<br>Autovermietung 24 Kanagalingam · Kirchstrasse 88 · 2540 Grenchen</div></div>
-    <div class="sec" style="margin:0 3mm 0 auto;display:flex">
-      <div class="c" style="flex:0 0 32mm"><span class="lb">Vertrags-Nr.</span><input class="t vnr-mirror"></div>
-      <div class="c" style="flex:0 0 34mm"><span class="lb">Datum / Zeit</span><input class="t"></div></div>
+    <div><h2>FOTODOKUMENTATION – RÜCKGABE&nbsp;(1/2)</h2><div class="sub2">Zustand bei Fahrzeugrückgabe – rundum fotografieren (Slots antippen)<br>Autovermietung 24 Kanagalingam · Kirchstrasse 88 · 2540 Grenchen</div></div>
+    <div class="sec" style="margin:0 3mm 0 auto;display:flex"><div class="c" style="flex:0 0 40mm"><span class="lb">Vertrags-Nr.</span><input class="t vnr-mirror"></div><div class="c" style="flex:0 0 34mm"><span class="lb">Datum / Zeit</span><input class="t"></div></div>
   </div>
-  <div class="sec"><div class="bar">FOTOS AUSSEN &amp; INNEN &ndash; RÜCKGABE <span class="r">vorne · Fahrerseite · hinten · Beifahrerseite · Dashboard · Innenraum · Kofferraum</span></div>
-    <div class="fgrid"><label class="fs" data-p="r_vorne"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_fahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Fahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_hinten"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Hinten / Rückseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_beifahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Beifahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_dash"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Dashboard (km / Tank)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_innenv"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_innenh"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum hinten</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_koffer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Kofferraum innen</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_detail1"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 1 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_detail2"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 2 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label></div>
+  <div class="sec"><div class="bar">FOTOS AUSSEN – RÜCKGABE <span class="r">gleiche Ansichten wie bei der Übernahme – für den direkten Vergleich</span></div>
+    <div class="fgridbig"><label class="fs" data-p="r_vorne"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_fahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Fahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_hinten"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Hinten / Rückseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_beifahrer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Beifahrerseite</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_dash"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Dashboard (km / Tank)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_innenv"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum vorne</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label></div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="hd2">
+    <div><h2>FOTODOKUMENTATION – RÜCKGABE&nbsp;(2/2)</h2><div class="sub2">Innenraum & Details – Zustand bei Rückgabe<br>Autovermietung 24 Kanagalingam · Kirchstrasse 88 · 2540 Grenchen</div></div>
+    <div class="sec" style="margin:0 3mm 0 auto;display:flex"><div class="c" style="flex:0 0 40mm"><span class="lb">Vertrags-Nr.</span><input class="t vnr-mirror"></div></div>
+  </div>
+  <div class="sec"><div class="bar">FOTOS INNEN & DETAILS – RÜCKGABE <span class="r">neue Schäden unbedingt als Detailfoto festhalten</span></div>
+    <div class="fgridbig"><label class="fs" data-p="r_innenh"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Innenraum hinten</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_koffer"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Kofferraum innen</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_detail1"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 1 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label><label class="fs" data-p="r_detail2"><input type="file" accept="image/*" hidden><img alt=""><button type="button" class="fsdel">✕</button><span class="fslab">Schaden / Detail 2 (optional)</span><span class="fshint">📷 Foto aufnehmen oder hochladen</span></label></div>
   </div>
   <div class="note">Die Fotos dokumentieren den Zustand bei der Rückgabe (Vergleich mit den Übernahme-Fotos) und sind Bestandteil des Mietvertrags. Beim Drucken / PDF-Speichern werden sie mitgedruckt.</div>
   <div class="sec sig"><div class="row">
