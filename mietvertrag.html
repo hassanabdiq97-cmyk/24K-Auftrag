@@ -161,8 +161,8 @@ label.fs.has .fsdel{display:block}
  .sheet{padding:9mm 12mm 6mm !important}
  .hd,.hd2{padding-bottom:1.4mm;margin-bottom:1.8mm}
  h1{font-size:20pt}
- .sec{margin-bottom:1.6mm}
- .row .c{min-height:7.4mm;padding:.6mm 1mm}
+ .sec{margin-bottom:1.3mm}
+ .row .c{min-height:6.9mm;padding:.5mm 1mm}
  .lb{font-size:5.6pt;margin-bottom:.3mm}
  input.t,textarea.t{font-size:7.5pt;padding:.4mm .8mm}
  .inl{font-size:7pt}
@@ -174,9 +174,9 @@ label.fs.has .fsdel{display:block}
  th{font-size:5.3pt;padding:.5mm .4mm}
  td{height:6mm;padding:.3mm .4mm}
  td input.t{font-size:7pt;padding:.3mm .6mm}
- .note{font-size:5.5pt;margin:.7mm .3mm}
- .small{font-size:5.3pt;line-height:1.35}
- .sigpad{height:10.5mm !important}
+ .note{font-size:5.5pt;margin:.5mm .3mm}
+ .small{font-size:5.0pt;line-height:1.26}
+ .sigpad{height:9.0mm !important}
  .sig .c{min-height:0}
  .fgrid{gap:2.4mm;padding:2.4mm}
  .fgrid2{gap:4mm;padding:2.4mm}
@@ -192,8 +192,9 @@ label.fs.has .fsdel{display:block}
   <button onclick="window.print()">🖨️ Drucken / Als PDF speichern</button>
   <button onclick="clearAll()">Alles leeren</button>
   <button id="viewBtn" onclick="toggleView()">📄 A4-Ansicht</button>
-  <span class="verbadge" style="background:#2e7d32;color:#fff;border-radius:5px;padding:6px 10px;font-weight:bold;font-size:13px">V7</span>
+  <span class="verbadge" style="background:#2e7d32;color:#fff;border-radius:5px;padding:6px 10px;font-weight:bold;font-size:13px">V14</span>
   <a class="navbtn" href="index.html">🏠 Start</a>
+  <a class="navbtn" href="quittung.html">🧾 Quittung</a>
   <a class="navbtn" href="auftrag.html">🔧 Auftrag</a>
   <span class="hint">Mietvertrag: in die grauen Felder tippen, ausdrucken oder als PDF speichern und unterschreiben lassen. Eingaben bleiben auf diesem Gerät gespeichert.</span>
 </div>
@@ -209,7 +210,7 @@ label.fs.has .fsdel{display:block}
   </div>
 
   <div class="sec"><div class="row">
-    <div class="c" style="flex:0 0 40mm"><span class="lb">Vertrags-Nr. <button type="button" class="genbtn" onclick="genNr(this,'M')">⚙ Nr. erzeugen</button></span><input class="t" id="vnr"></div>
+    <div class="c" style="flex:0 0 40mm"><span class="lb">Vertrags-Nr. <button type="button" class="genbtn" onclick="genNr(this,'MV')">⚙ Nr. erzeugen</button></span><input class="t" id="vnr"></div>
     <div class="c"><span class="lb">Übernahme (Datum / Zeit)</span><input class="t"></div>
     <div class="c"><span class="lb">Rückgabe vereinbart (Datum / Zeit)</span><input class="t"></div>
     <div class="c" style="flex:0 0 36mm"><span class="lb">Übernahme- / Rückgabeort</span><input class="t"></div>
@@ -249,6 +250,14 @@ label.fs.has .fsdel{display:block}
   </div>
 
   <div class="sec"><div class="bar">TARIF&nbsp;/&nbsp;KAUTION&nbsp;/&nbsp;ZAHLUNG</div>
+    <div class="row"><div class="c" style="flex:0 0 66mm"><span class="lb">Mietart</span>
+      <label class="ck"><input type="checkbox">Miete (fester Zeitraum)</label>
+      <label class="ck"><input type="checkbox">Abo (unbefristet)</label></div>
+      <div class="c"><span class="lb">Bei Abo: Zahlungsintervall (im Voraus)</span>
+      <label class="ck sm"><input type="checkbox">wöchentlich</label>
+      <label class="ck sm"><input type="checkbox">monatlich</label>
+      <span style="font-size:6pt">&nbsp;Betrag CHF</span><input class="inl" style="width:16mm">
+      <span style="font-size:6pt">pro Intervall</span></div></div>
     <div class="row">
       <div class="c"><span class="lb">CHF / Tag</span><input class="t"></div>
       <div class="c"><span class="lb">CHF / Wochenende</span><input class="t"></div>
@@ -280,7 +289,7 @@ label.fs.has .fsdel{display:block}
   </div>
 
   <div class="sec"><div class="bar">MIETBEDINGUNGEN (Kurzfassung) <span class="r">ergänzend gelten die AGB / Mietbedingungen der Autovermietung</span></div>
-    <div class="row"><div class="c"><div class="small">Das Fahrzeug darf nur von den eingetragenen Fahrern mit gültigem Führerausweis gelenkt werden. Der Mieter haftet für Schäden bis zur Höhe des vereinbarten Selbstbehalts, bei Grobfahrlässigkeit, Vorsatz oder Vertragsverletzung unbeschränkt, sowie für Bussen, Verkehrsabgaben und Gebühren während der Mietdauer. Unfälle, Schäden und Diebstahl sind sofort der Vermieterin und bei Fremdschaden der Polizei zu melden (Unfallprotokoll ausfüllen). Rückgabe zum vereinbarten Zeitpunkt im gleichen Zustand und mit gleichem Treibstoffstand; fehlender Treibstoff, Mehrkilometer, Reinigung und verspätete Rückgabe werden verrechnet; die Kaution kann damit verrechnet werden. Keine Weitervermietung, keine Rennen oder Fahrschule, kein Transport gefährlicher Güter. Auslandfahrten nur mit schriftlicher Erlaubnis.</div></div></div>
+    <div class="row"><div class="c"><div class="small"><b>Fahrer &amp; Nutzung:</b> Das Fahrzeug darf nur von den eingetragenen Fahrern mit gültigem Führerausweis gelenkt werden; Weitervermietung, Rennen, Fahrschule und der Transport gefährlicher Güter sind untersagt, Auslandfahrten nur mit schriftlicher Erlaubnis. <b>Haftung:</b> Der Mieter haftet für Schäden bis zum vereinbarten Selbstbehalt; bei Grobfahrlässigkeit, Vorsatz, Vertragsverletzung oder Lenken durch nicht berechtigte Personen unbeschränkt. <b>Schadenfall:</b> Unfall, Schaden oder Diebstahl sind der Vermieterin sofort, bei Fremdschaden zudem der Polizei zu melden (Unfallprotokoll ausfüllen). <b>Rückgabe:</b> zum vereinbarten Zeitpunkt, innen und aussen im übernommenen, sauberen Zustand und mit gleichem Treibstoff- bzw. Ladestand. Andernfalls gelten folgende vereinbarte Pauschalen (Konventionalstrafe; ohne Nachweis eines Schadens geschuldet, die Geltendmachung weitergehenden Schadens sowie die Verrechnung mit der Kaution bleiben vorbehalten): <b>Innenreinigung CHF 50.–</b> · <b>Sonderreinigung</b> bei starker Verschmutzung (u. a. Tierhaare, Flecken, Abfall, Gerüche) <b>CHF 150.–</b> zzgl. effektiver Mehrkosten · <b>Rauchen im Fahrzeug CHF 200.–</b> · fehlender Treibstoff / fehlende Ladung: effektive Kosten zzgl. <b>Service-Pauschale CHF 20.–</b>. <b>Bussen &amp; Gebühren:</b> Sämtliche während der Mietdauer verursachten Bussen, Verkehrs-, Park- und Mautgebühren – auch nachträglich zugestellte – trägt der Mieter; pro Fall wird zusätzlich eine <b>Bearbeitungsgebühr von CHF 40.–</b> erhoben. Der Mieter ermächtigt die Vermieterin, seine Personalien den zuständigen Behörden bekannt zu geben. <b>Miete (fester Zeitraum):</b> Bei nicht pünktlicher Rückgabe am vereinbarten Tag wird zusätzlich zur weiterlaufenden Tagesmiete eine <b>Strafgebühr von CHF 50.–</b> verrechnet. <b>Abo (unbefristet):</b> Zahlung pro gewähltes Intervall im Voraus; jederzeit kündbar – das laufende, angebrochene Intervall bleibt vollständig geschuldet und wird nicht zurückerstattet.</div></div></div>
   </div>
 
   <div class="note">Der Mieter bestätigt die Übernahme des Fahrzeugs im beschriebenen Zustand, die Richtigkeit seiner Angaben und die Anerkennung der Mietbedingungen.</div>
@@ -289,7 +298,7 @@ label.fs.has .fsdel{display:block}
     <div class="c"><span class="lb">Unterschrift Mieter (Übernahme)</span><div class="sigpad" data-s="mv_mieter_ueb"><canvas></canvas><button type="button" class="sigclear">✕</button><span class="sighint">✍️ Hier unterschreiben (Finger / Stift)</span></div></div>
     <div class="c"><span class="lb">Unterschrift Vermieterin / Visum</span><div class="sigpad" data-s="mv_firma_ueb"><canvas></canvas><button type="button" class="sigclear">✕</button><span class="sighint">✍️ Hier unterschreiben (Finger / Stift)</span></div></div></div></div>
 
-  <div class="sec"><div class="bar">RÜCKGABE&nbsp;/&nbsp;ABRECHNUNG</div>
+  <div class="sec"><div class="bar">RÜCKGABE&nbsp;/&nbsp;ABRECHNUNG <span class="r">verspätete Rückgabe (Miete): + CHF 50.– Strafgebühr zusätzlich zur weiterlaufenden Miete</span></div>
     <div class="row"><div class="c"><span class="lb">Rückgabe (Datum / Zeit)</span><input class="t"></div>
       <div class="c" style="flex:0 0 26mm"><span class="lb">km bei Rückgabe</span><input class="t"></div>
       <div class="c"><span class="lb">Treibstoff bei Rückgabe</span><label class="ck sm"><input type="checkbox">¼</label><label class="ck sm"><input type="checkbox">½</label><label class="ck sm"><input type="checkbox">¾</label><label class="ck sm"><input type="checkbox">voll</label></div>
@@ -381,10 +390,8 @@ function devKuerzel(){var k=null;
     try{localStorage.setItem('a24_dev',k);}catch(e){}}
   return k;}
 function genNr(btn,typ){var k=devKuerzel();if(!k)return;
-  var n=1;try{n=parseInt(localStorage.getItem('a24_seq'+typ)||'0',10)+1;
-    localStorage.setItem('a24_seq'+typ,String(n));}catch(e){}
   var d=new Date(),p=function(x){return (x<10?'0':'')+x;};
-  var nr=typ+'-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+k+'-'+('00'+n).slice(-3);
+  var nr=typ+'-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+p(d.getHours())+p(d.getMinutes())+p(d.getSeconds())+'-'+k;
   var inp=btn.closest('.c').querySelector('input.t');
   inp.value=nr;inp.dispatchEvent(new Event('input',{bubbles:true}));}
 function knrAusTel(btn){var tel=document.getElementById('tel1');
