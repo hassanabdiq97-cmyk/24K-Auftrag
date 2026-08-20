@@ -190,7 +190,7 @@ label.fs.has .fsdel{display:block}
   <button onclick="window.print()">🖨️ Drucken / Als PDF speichern</button>
   <button onclick="clearAll()">Alles leeren</button>
   <button id="viewBtn" onclick="toggleView()">📄 A4-Ansicht</button>
-  <span class="verbadge" style="background:#2e7d32;color:#fff;border-radius:5px;padding:6px 10px;font-weight:bold;font-size:13px">V13</span>
+  <span class="verbadge" style="background:#2e7d32;color:#fff;border-radius:5px;padding:6px 10px;font-weight:bold;font-size:13px">V15</span>
   <a class="navbtn" href="index.html">🏠 Start</a>
   <a class="navbtn" href="quittung.html">🧾 Quittung</a>
   <a class="navbtn" href="mietvertrag.html">🚗 Mietvertrag</a>
@@ -210,7 +210,7 @@ label.fs.has .fsdel{display:block}
     <div class="c" style="flex:0 0 44mm"><span class="lb">Auftrags-Nr. <button type="button" class="genbtn" onclick="genNr(this,'WA')">⚙ Nr. erzeugen</button></span><input class="t" id="anr"></div>
     <div class="c"><span class="lb">Annahme &nbsp;(Datum / Zeit)</span><input class="t"></div>
     <div class="c"><span class="lb">Termin Fertigstellung / Abholung &nbsp;(Datum / Zeit)</span><input class="t"></div>
-    <div class="c" style="flex:0 0 40mm"><span class="lb">Serviceberater/in</span><input class="t"></div>
+    <div class="c" style="flex:0 0 40mm"><span class="lb">Serviceberater/in</span><input class="t" id="bea"></div>
   </div></div>
 
   <div class="twin">
@@ -652,7 +652,11 @@ function devKuerzel(){var k=null;
     if(!k)return null;k=k.replace(/[^A-Za-z]/g,'').toUpperCase().slice(0,3)||'XX';
     try{localStorage.setItem('a24_dev',k);}catch(e){}}
   return k;}
-function genNr(btn,typ){var k=devKuerzel();if(!k)return;
+function genNr(btn,typ){var e=document.getElementById('bea');
+  var raw=(e&&e.value?e.value:'').toUpperCase().replace(/\u00c4/g,'A').replace(/\u00d6/g,'O').replace(/\u00dc/g,'U').replace(/[^A-Z]/g,'');
+  var k=raw.slice(0,3);
+  if(!k){alert('Bitte zuerst deinen Namen im Feld \u00abBearbeiter/in\u00bb bzw. \u00abServiceberater/in\u00bb eintragen \u2013 die ersten 3 Buchstaben werden Teil der Nummer.');if(e)e.focus();return;}
+  try{localStorage.setItem('a24_dev',k);}catch(err){}
   var d=new Date(),p=function(x){return (x<10?'0':'')+x;};
   var nr=typ+'-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+p(d.getHours())+p(d.getMinutes())+p(d.getSeconds())+'-'+k;
   var inp=btn.closest('.c').querySelector('input.t');
